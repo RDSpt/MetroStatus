@@ -94,10 +94,9 @@ public class Controller {
 	
 	private TranslateTransition animationLabel(Label label, String text) {
 		TranslateTransition translateTransition = new TranslateTransition(Duration.millis(10000), label);
-		System.out.println(text.length());
 		if(text.length()> 50) {
-			translateTransition.setFromX(0);
-			translateTransition.setToX(-1 * text.length() * 4);
+			translateTransition.setFromX(text.length()*2.3);
+			translateTransition.setToX(-1 * text.length() * 6);
 			translateTransition.setInterpolator(Interpolator.LINEAR);
 			translateTransition.setCycleCount(Animation.INDEFINITE);
 		}

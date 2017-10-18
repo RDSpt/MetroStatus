@@ -11,25 +11,21 @@
     <AnchorPane style="-fx-background-color: #fffa97">
          <children>
              <Label fx:id="amarelaStatus" layoutX="50.0" prefHeight="50.0" text="Label" />
-            <Pane>
+            <AnchorPane fx:id="amarelaAnchor" style="-fx-background-color: #fffa97;">
                <children>
-                  <AnchorPane fx:id="amarelaAnchor">
-                     <children>
-                         <ImageView fx:id="amarelaImg" blendMode="MULTIPLY" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../graphics/amarela.png" />
-                            </image>
-                         </ImageView>
-                     </children>
-                  </AnchorPane>
+                   <ImageView fx:id="amarelaImg" blendMode="MULTIPLY" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                          <Image url="@../../graphics/amarela.png" />
+                      </image>
+                   </ImageView>
                </children>
-            </Pane>
+            </AnchorPane>
          </children>
       </AnchorPane>
        <AnchorPane style="-fx-background-color: #9ec0ed;">
          <children>
              <Label fx:id="azulStatus" layoutX="50.0" prefHeight="50.0" text="Label" />
-            <AnchorPane fx:id="azulAnchor">
+            <AnchorPane fx:id="azulAnchor" style="-fx-background-color: #9ec0ed;">
                <children>
                    <ImageView fx:id="azulImg" blendMode="MULTIPLY" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                       <image>
@@ -43,17 +39,13 @@
       <AnchorPane style="-fx-background-color: #83c7a0;">
          <children>
              <Label fx:id="verdeStatus" layoutX="50.0" prefHeight="50.0" text="Label" />
-            <AnchorPane fx:id="verdeAnchor">
+            <AnchorPane fx:id="verdeAnchor" style="-fx-background-color: #83c7a0;">
                <children>
-                  <Pane>
-                     <children>
-                         <ImageView fx:id="verdeImg" blendMode="MULTIPLY" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../graphics/verde.png" />
-                            </image>
-                         </ImageView>
-                     </children>
-                  </Pane>
+                   <ImageView fx:id="verdeImg" blendMode="MULTIPLY" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                          <Image url="@../../graphics/verde.png" />
+                      </image>
+                   </ImageView>
                </children>
             </AnchorPane>
          </children>
@@ -61,7 +53,7 @@
       <AnchorPane style="-fx-background-color: #e08d8e;">
          <children>
              <Label fx:id="vermelhaStatus" layoutX="50.0" prefHeight="50.0" text="Label" />
-            <AnchorPane fx:id="vermelhaAnchor">
+            <AnchorPane fx:id="vermelhaAnchor" style="-fx-background-color: #e08d8e;">
                <children>
                    <ImageView fx:id="vermelhaImg" blendMode="MULTIPLY" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                       <image>

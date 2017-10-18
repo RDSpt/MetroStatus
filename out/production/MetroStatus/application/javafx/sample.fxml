@@ -6,49 +6,69 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="225.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.javafx.Controller">
+<VBox prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.javafx.Controller">
    <children>
-      <AnchorPane fx:id="amarelaImg">
+    <AnchorPane style="-fx-background-color: #fffa97">
          <children>
-             <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                <image>
-                    <Image url="@../../graphics/amarela.png" />
-                </image>
-             </ImageView>
+             <Label fx:id="amarelaStatus" layoutX="50.0" prefHeight="50.0" text="Label" />
+            <AnchorPane fx:id="amarelaAnchor" style="-fx-background-color: #fffa97;">
+               <children>
+                   <ImageView fx:id="amarelaImg" blendMode="MULTIPLY" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                          <Image url="@../../graphics/amarela.png" />
+                      </image>
+                   </ImageView>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="azulImg" layoutY="50.0">
+       <AnchorPane style="-fx-background-color: #9ec0ed;">
          <children>
-             <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                <image>
-                    <Image url="@../../graphics/azul.png" />
-                </image>
-             </ImageView>
+             <Label fx:id="azulStatus" layoutX="50.0" prefHeight="50.0" text="Label" />
+            <AnchorPane fx:id="azulAnchor" style="-fx-background-color: #9ec0ed;">
+               <children>
+                   <ImageView fx:id="azulImg" blendMode="MULTIPLY" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                          <Image url="@../../graphics/azul.png" />
+                      </image>
+                   </ImageView>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="verdeImg" layoutY="100.0">
+      <AnchorPane style="-fx-background-color: #83c7a0;">
          <children>
-             <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                <image>
-                    <Image url="@../../graphics/verde.png" />
-                </image>
-             </ImageView>
+             <Label fx:id="verdeStatus" layoutX="50.0" prefHeight="50.0" text="Label" />
+            <AnchorPane fx:id="verdeAnchor" style="-fx-background-color: #83c7a0;">
+               <children>
+                   <ImageView fx:id="verdeImg" blendMode="MULTIPLY" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                          <Image url="@../../graphics/verde.png" />
+                      </image>
+                   </ImageView>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="vermelhaImg" layoutY="150.0">
+      <AnchorPane style="-fx-background-color: #e08d8e;">
          <children>
-             <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                <image>
-                    <Image url="@../../graphics/vermelha.png" />
-                </image>
-             </ImageView>
+             <Label fx:id="vermelhaStatus" layoutX="50.0" prefHeight="50.0" text="Label" />
+            <AnchorPane fx:id="vermelhaAnchor" style="-fx-background-color: #e08d8e;">
+               <children>
+                   <ImageView fx:id="vermelhaImg" blendMode="MULTIPLY" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                          <Image url="@../../graphics/vermelha.png" />
+                      </image>
+                   </ImageView>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
-       <Label fx:id="amarelaStatus" layoutX="50.0" prefHeight="50.0" prefWidth="250.0" text="Label" />
-       <Label fx:id="azulStatus" layoutX="50.0" layoutY="50.0" prefHeight="50.0" prefWidth="250.0" text="Label" />
-       <Label fx:id="verdeStatus" layoutX="50.0" layoutY="100.0" prefHeight="50.0" prefWidth="250.0" text="Label" />
-       <Label fx:id="vermelhaStatus" layoutX="50.0" layoutY="150.0" prefHeight="50.0" prefWidth="250.0" text="Label" />
-       <Label layoutY="199.0" prefHeight="25.0" prefWidth="90.0" text=" Last updated at:" />
-       <Label fx:id="timestamp" layoutX="90.0" layoutY="199.0" prefHeight="25.0" prefWidth="210.0" />
+      <AnchorPane>
+         <children>
+             <Label prefHeight="25.0" prefWidth="90.0" text=" Last updated at:" />
+             <Label fx:id="timestamp" layoutX="90.0" prefHeight="25.0" prefWidth="210.0" />
+         </children>
+      </AnchorPane>
    </children>
-</Pane>
+</VBox>

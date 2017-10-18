@@ -19,7 +19,10 @@ public class Controller {
 	Label amarelaStatus, azulStatus, verdeStatus, vermelhaStatus, timestamp;
 	
 	@FXML
-	AnchorPane amarelaImg, azulImg, verdeImg, vermelhaImg;
+	ImageView amarelaImg, azulImg, verdeImg, vermelhaImg;
+	
+	@FXML
+	AnchorPane amarelaAnchor,azulAnchor,verdeAnchor,vermelhaAnchor;
 	
 	private SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
 	
@@ -50,10 +53,14 @@ public class Controller {
 			azulStatus.setText(info.get(1));
 			verdeStatus.setText(info.get(2));
 			vermelhaStatus.setText(info.get(3));
-			graphicStatus(amarelaImg, info.get(0));
-			graphicStatus(azulImg, info.get(1));
-			graphicStatus(verdeImg, info.get(2));
-			graphicStatus(vermelhaImg, info.get(3));
+			animationLabel(amarelaStatus, info.get(0)).play();
+			animationLabel(azulStatus, info.get(1)).play();
+			animationLabel(verdeStatus, info.get(2)).play();
+			animationLabel(vermelhaStatus, info.get(3)).play();
+			graphicStatus(amarelaAnchor, info.get(4));
+			graphicStatus(azulAnchor, info.get(5));
+			graphicStatus(verdeAnchor, info.get(6));
+			graphicStatus(vermelhaAnchor, info.get(7));
 			in.close();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -85,14 +92,26 @@ public class Controller {
 		return info;
 	}
 	
+	private TranslateTransition animationLabel(Label label, String text) {
+		TranslateTransition translateTransition = new TranslateTransition(Duration.millis(10000), label);
+		System.out.println(text.length());
+		if(text.length()> 50) {
+			translateTransition.setFromX(0);
+			translateTransition.setToX(-1 * text.length() * 4);
+			translateTransition.setInterpolator(Interpolator.LINEAR);
+			translateTransition.setCycleCount(Animation.INDEFINITE);
+		}
+		return translateTransition;
+	}
+	
 	private void graphicStatus(AnchorPane img, String status) {
 		
-		if (status.contains("Ok")) {
+		if (status.contains("0")) {
 			try {
 				img.getChildren().add(new StackPane(img.getChildren().get(0), new ImageView
 						(new Image
 								("/graphics/check.png",
-										10, 10,
+										20, 20,
 										true,
 										true))));
 			} catch (Exception e) {
@@ -100,6 +119,19 @@ public class Controller {
 				
 			}
 			
+		}
+		else if (status.contains("1")) {
+			try {
+				img.getChildren().add(new StackPane(img.getChildren().get(0), new ImageView
+						(new Image
+								("/graphics/caution.png",
+										20, 20,
+										true,
+										true))));
+			} catch (Exception e) {
+				e.printStackTrace();
+				
+			}
 		}
 	}
 }

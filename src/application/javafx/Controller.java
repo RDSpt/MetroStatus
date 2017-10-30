@@ -53,10 +53,10 @@ public class Controller {
 			azulStatus.setText(info.get(1));
 			verdeStatus.setText(info.get(2));
 			vermelhaStatus.setText(info.get(3));
-			animationLabel(amarelaStatus, info.get(0)).play();
-			animationLabel(azulStatus, info.get(1)).play();
-			animationLabel(verdeStatus, info.get(2)).play();
-			animationLabel(vermelhaStatus, info.get(3)).play();
+			animationLabel(amarelaStatus, info.get(0));
+			animationLabel(azulStatus, info.get(1));
+			animationLabel(verdeStatus, info.get(2));
+			animationLabel(vermelhaStatus, info.get(3));
 			graphicStatus(amarelaAnchor, info.get(4));
 			graphicStatus(azulAnchor, info.get(5));
 			graphicStatus(verdeAnchor, info.get(6));
@@ -92,15 +92,17 @@ public class Controller {
 		return info;
 	}
 	
-	private TranslateTransition animationLabel(Label label, String text) {
+	private void animationLabel(Label label, String text) {
 		TranslateTransition translateTransition = new TranslateTransition(Duration.millis(10000), label);
 		if(text.length()> 50) {
 			translateTransition.setFromX(text.length()*2.3);
 			translateTransition.setToX(-1 * text.length() * 6);
 			translateTransition.setInterpolator(Interpolator.LINEAR);
 			translateTransition.setCycleCount(Animation.INDEFINITE);
+			translateTransition.play();
+		}else{
+			translateTransition.stop();
 		}
-		return translateTransition;
 	}
 	
 	private void graphicStatus(AnchorPane img, String status) {
